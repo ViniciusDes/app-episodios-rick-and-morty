@@ -1,28 +1,23 @@
-import React, { useEffect, useState } from "react";
-import EpisodeService from "../../services/EpisodeService";
-import { Episode } from "../../types/Episode";
+import React, { useEffect } from "react";
+import { useEpisodeStore } from "../../store/Episode";
+
 import { InputEventElement } from "../../types/Global";
 import CardEpisode from "../CardEpisode";
 
 import { Container, ContainerItems, Header } from "./styles";
-import { ListEpisodiesProps } from "./types";
 
 const ListEpisodies: React.FC = () => {
-  const [listOfEpisodies, setListOfEpisodies] = useState<Array<Episode>>([]);
+  const { listOfEpisodies, listEpisodies } = useEpisodeStore();
 
-  const listEpisodies = async (description?: string) => {
-    const data = await EpisodeService.getEpisodies(description);
-    setListOfEpisodies(data);
-  };
-
-  const handleChangeFilterEpisodies = (ev: InputEventElement) => {
+  const handleChangeFilterEpisodies = async (ev: InputEventElement) => {
     const { value } = ev.target;
-    console.log("aaaa");
-    listEpisodies(value);
+    await listEpisodies(value);
   };
 
   useEffect(() => {
     listEpisodies();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

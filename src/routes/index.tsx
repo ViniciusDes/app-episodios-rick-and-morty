@@ -1,12 +1,12 @@
-import { appendFile } from "fs";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import { Route, Routes as RoutesRTDOM } from "react-router-dom";
+import Characteres from "../pages/Characteres";
 import Home from "../pages/Home";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-]);
-
-export { router };
+export default function Routes() {
+  return (
+    <RoutesRTDOM>
+      <Route path="/" element={<Home />} />
+      <Route path="/characteres" element={<Characteres />} />
+    </RoutesRTDOM>
+  );
+}

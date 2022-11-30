@@ -1,15 +1,16 @@
 import React from "react";
-import Home from "./pages/Home";
-import { router } from "./routes";
+import Routes from "./routes";
 import GlobalStyle from "./styles";
-import { RouterProvider } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <RouterProvider router={router} />
-      <GlobalStyle />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes />
+        <GlobalStyle />
+      </div>
+    </BrowserRouter>
   );
 }
 

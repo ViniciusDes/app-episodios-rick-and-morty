@@ -1,5 +1,13 @@
-import { Episode } from "../../types/Episode";
-
 export interface IEpisodeService {
   getEpisodies: (description?: string) => Promise<Array<Episode>>;
 }
+
+export type Episode = {
+  id: number;
+  name: string;
+  air_date: string;
+  episode: string;
+  characters: string[];
+  url: string;
+  created: string;
+};

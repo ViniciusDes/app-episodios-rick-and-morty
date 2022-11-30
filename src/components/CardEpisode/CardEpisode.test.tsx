@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import CardEpisode from ".";
 
 const episodeMock = {
@@ -33,7 +34,11 @@ const episodeMock = {
 
 describe("<CardEpisode />", () => {
   test("render data card episode", () => {
-    render(<CardEpisode episode={episodeMock} />);
+    render(
+      <BrowserRouter>
+        <CardEpisode episode={episodeMock} />
+      </BrowserRouter>
+    );
 
     const name = screen.queryByText("Descrição: " + episodeMock.name);
     const dateAir = screen.queryByText(
@@ -48,12 +53,14 @@ describe("<CardEpisode />", () => {
 
   test("render label no air date", () => {
     render(
-      <CardEpisode
-        episode={{
-          ...episodeMock,
-          air_date: "",
-        }}
-      />
+      <BrowserRouter>
+        <CardEpisode
+          episode={{
+            ...episodeMock,
+            air_date: "",
+          }}
+        />
+      </BrowserRouter>
     );
 
     const dateAir = screen.queryByText("Sem data prevista para exibição");

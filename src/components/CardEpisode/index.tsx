@@ -1,14 +1,20 @@
-import moment from "moment";
 import React from "react";
-import { Episode } from "../../types/Episode";
+import { useNavigate } from "react-router-dom";
+import { Episode } from "../../services/EpisodeService/types";
 
 import { Container } from "./styles";
 //*es-lint
 const CardEpisode: React.FC<{ episode: Episode }> = ({ episode }) => {
+  const navigate = useNavigate();
+
   function isValidDate(dateObject: string) {
     return new Date(dateObject).toString() !== "Invalid Date";
   }
-  const handleClickNavigateCharacteres = (id: number) => {};
+  const handleClickNavigateCharacteres = (episode: Episode) => {
+    navigate("/characteres", {
+      state: { listLinkOfCharacteres: episode.characters },
+    });
+  };
 
   return (
     <Container role="feed">
@@ -19,7 +25,9 @@ const CardEpisode: React.FC<{ episode: Episode }> = ({ episode }) => {
           : "Sem data prevista para exibição"}
       </h3>
       <p>Episodio: {episode.episode}</p>
-      <button>Personagens</button>
+      <button onClick={() => handleClickNavigateCharacteres(episode)}>
+        Personagens
+      </button>
     </Container>
   );
 };
