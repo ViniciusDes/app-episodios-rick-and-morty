@@ -2,7 +2,7 @@ import { act, fireEvent, render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import ListEpisodies from ".";
 import App from "../../App";
-import EpisodeService from "../../services/EpisodeService";
+import EpisodeService from "../../services/Episode";
 
 const mockedUsedNavigate = jest.fn();
 

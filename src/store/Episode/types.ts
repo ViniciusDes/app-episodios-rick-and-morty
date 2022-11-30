@@ -1,4 +1,4 @@
-import { Episode } from "../../services/EpisodeService/types";
+import { Episode } from "../../services/Episode/types";
 
 export interface EpisodeState {
   listOfEpisodies: Array<Episode>;

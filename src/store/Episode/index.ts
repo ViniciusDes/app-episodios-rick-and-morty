@@ -1,5 +1,5 @@
 import create from "zustand";
-import EpisodeService from "../../services/EpisodeService";
+import EpisodeService from "../../services/Episode";
 import { EpisodeState } from "./types";
 
 const useEpisodeStore = create<EpisodeState>((set) => ({

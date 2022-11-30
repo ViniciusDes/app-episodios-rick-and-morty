@@ -1,6 +1,6 @@
-import { Episode, IEpisodeService } from "./types";
+import { Episode, IEpisode } from "./types";
 
-class EpisodeService implements IEpisodeService {
+class EpisodeService implements IEpisode {
   async getEpisodies(description?: string): Promise<Episode[] | []> {
     let url = "https://rickandmortyapi.com/api/episode";
 

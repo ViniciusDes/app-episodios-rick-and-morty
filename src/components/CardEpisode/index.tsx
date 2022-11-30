@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Episode } from "../../services/EpisodeService/types";
+import { Episode } from "../../services/Episode/types";
 
 import { Container } from "./styles";
 //*es-lint

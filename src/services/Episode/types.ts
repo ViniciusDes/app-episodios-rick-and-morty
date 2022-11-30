@@ -1,4 +1,4 @@
-export interface IEpisodeService {
+export interface IEpisode {
   getEpisodies: (description?: string) => Promise<Array<Episode>>;
 }
 

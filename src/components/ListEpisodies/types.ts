@@ -1,4 +1,4 @@
-import { Episode } from "../../services/EpisodeService/types";
+import { Episode } from "../../services/Episode/types";
 import { InputEventElement } from "../../types/Global";
 
 export interface ListEpisodiesProps {
