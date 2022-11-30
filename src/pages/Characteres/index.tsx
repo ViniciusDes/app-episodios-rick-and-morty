@@ -25,7 +25,9 @@ const Characteres: React.FC = () => {
     <Container>
       <WrapperInfo>
         <ol>
-          <li></li>
+          {listOfCharactere.map((charactere) => (
+            <li key={charactere.id}>{charactere.name}</li>
+          ))}
         </ol>
       </WrapperInfo>
     </Container>
