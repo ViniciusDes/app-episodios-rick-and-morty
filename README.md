@@ -1,4 +1,4 @@
-## Esse projeto tem como base somente ter conteudos simples para aplicar testes unitários.
+## Esse projeto tem como base somente ter conteudos simples, objetivos e arquitetural para aplicar testes unitários.
 
 Execute npm install ou yarn install para instalar as dependências;
 
